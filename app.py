@@ -90,7 +90,9 @@ def chiefguests():
 def keynote():
   return render_template('keynote.html')
 
-
+@app.route('/talentz')
+def talentz():
+  return render_template('talentz.html')
 
 
 if __name__ == "__main__":
