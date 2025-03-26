@@ -93,53 +93,53 @@ body{
 
 @keyframes Color{
   0%{
-    color:#A0D468;
+    color:#77c721;
   }
   
   20%{
-    color:#4FC1E9;
+    color:#1ba4d6;
   }
   
   40%{
-    color:#FFCE54;
+    color:#c99c2a;
   }
   
   60%{
-    color:#FC6E51;
+    color:#ee4827;
   }
   
   80%{
-    color:#ED5565;
+    color:#e93c4d;
   }
   
   100%{
-    color:#AC92EC;
+    color:#744adf;
   }
 }
 
 @-moz-keyframes Color{
   0%{
-    color:#A0D468;
+    color:#7ac529;
   }
   
   20%{
-    color:#4FC1E9;
+    color:#1c9dcc;
   }
   
   40%{
-    color:#FFCE54;
+    color:#b18822;
   }
   
   60%{
-    color:#FC6E51;
+    color:#c0442b;
   }
   
   80%{
-    color:#ED5565;
+    color:#c42c3b;
   }
   
   100%{
-    color:#AC92EC;
+    color:#663bd3;
   }
 }
 
