@@ -7,12 +7,96 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+ .spiky-container {
+        position: absolute;
+        top: 100px;
+        left: 15px;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 900;
+        color: white;
+        font-size: 14px;
+    }
+
+    /* SVG Spiky Ball */
+    .spiky-ball {
+        width: 100%;
+        height: 100%;
+        animation: rotateBall 3s linear infinite;
+        filter: drop-shadow(0px 0px 15px rgba(255, 215, 0, 0.9));
+    }
+
+    /* Spikes Animation */
+    .spikes polygon {
+        fill: gold;
+        animation: pulseSpikes 1.5s infinite alternate;
+    }
+
+    /* Text inside the spiky ball */
+    .spiky-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        animation: glowText 1.5s infinite alternate;
+    }
+
+    /* Rotate Animation */
+    @keyframes rotateBall {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Spikes Glow Animation */
+    @keyframes pulseSpikes {
+        0% { fill: gold; transform: scale(1); }
+        100% { fill: orange; transform: scale(1.1); }
+    }
+
+    /* Text Glow Animation */
+    @keyframes glowText {
+        0% { text-shadow: 0 0 5px white; }
+        100% { text-shadow: 0 0 15px yellow; }
+    }
+    </style>
 </head>
 <body>
     {% include 'navbar.html' %}
-    <div class="bg-danger text-center text-light blink" style="border-radius: 50px;position:absolute;top:100px;left:15px;padding: 40px;font-weight: 900;">
-      ON-SPOT REGISTRATION <br>AVAILABLE
-    </div>
+
+
+    <div class="spiky-container">
+      <svg viewBox="0 0 200 200" class="spiky-ball">
+          <circle cx="100" cy="100" r="60" fill="url(#gradient)" />
+          <g class="spikes">
+              <!-- Creating 12 spikes -->
+              <polygon points="100,10 110,40 90,40" />
+              <polygon points="160,40 170,70 140,60" />
+              <polygon points="190,100 160,110 160,90" />
+              <polygon points="160,160 170,190 140,170" />
+              <polygon points="100,190 110,160 90,160" />
+              <polygon points="40,160 30,190 60,170" />
+              <polygon points="10,100 40,110 40,90" />
+              <polygon points="40,40 30,70 60,60" />
+          </g>
+          <defs>
+              <radialGradient id="gradient">
+                  <stop offset="0%" stop-color="#ff5733" />
+                  <stop offset="100%" stop-color="#ffbd33" />
+              </radialGradient>
+          </defs>
+      </svg>
+      <div class="spiky-text">ON-SPOT REGISTRATION <br>AVAILABLE</div>
+  </div>
+
     <div class="main text-center container-fluid" style=" background-image:linear-gradient(rgba(0,0,0,0.60),rgba(0, 0, 0, 0.60)),url('static/tal.jpg');
     background-size: cover;
     background-position: center;
