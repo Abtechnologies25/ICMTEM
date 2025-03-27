@@ -6,6 +6,21 @@ body{
   animation: blink 2.0s linear infinite;
 }
 
+.sub{
+  background: linear-gradient(45deg, #ff5733, #ffbd33, #33ff57, #33aaff);
+  animation: gradientAnimation 6s ease infinite;
+ }
+
+ @media (max-width: 768px) {
+  .sub {
+      position: static !important; /* Remove absolute positioning */
+      width: 100% !important; /* Full width on mobile */
+      height: auto !important; /* Auto height for content */
+      margin-bottom: 20px; /* Add space between the sections */
+  }
+}
+
+
 @keyframes blink{
   0%{opacity: 0;}
   50%{opacity: .5;}
@@ -133,4 +148,22 @@ body{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 768px) {
+  .animated-navbar {
+      flex-direction: column;
+      text-align: center;
+      border-radius: 20px;
+      padding: 12px;
+  }
 
+  .animated-heading {
+      font-size: 18px; /* Smaller for Mobile */
+      margin-bottom: 10px;
+      margin-right: 0;
+  }
+
+  .animated-btn {
+      font-size: 16px;
+      padding: 8px 16px;
+  }
+}
