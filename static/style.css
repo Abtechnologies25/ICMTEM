@@ -6,17 +6,85 @@ body{
   animation: blink 2.0s linear infinite;
 }
 
-.sub{
-  background: linear-gradient(45deg, #ff5733, #ffbd33, #33ff57, #33aaff);
-  animation: gradientAnimation 6s ease infinite;
- }
+/* Floating Section Container */
+.floating-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  width: 100%;
+  padding: 10px;
+}
 
- @media (max-width: 768px) {
-  .sub {
-      position: static !important; /* Remove absolute positioning */
-      width: 100% !important; /* Full width on mobile */
-      height: auto !important; /* Auto height for content */
-      margin-bottom: 20px; /* Add space between the sections */
+/* Common Floating Box Styling */
+.floating-box {
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Animated Gradient Background */
+.floating-left {
+  background: linear-gradient(45deg, #ff4b1f, #ff9068, #ff4b1f);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight:900;
+}
+
+.floating-right {
+  background: linear-gradient(45deg, #1fddff, #1fa2ff, #1fddff);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+  height: 150px;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover Effect */
+.floating-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Blinking Button Effect */
+.blink {
+  animation: blinkEffect 1s infinite;
+}
+
+@keyframes blinkEffect {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 1024px) {
+  .floating-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .floating-box {
+      width: 90%;
+      margin-bottom: 20px;
+      
   }
 }
 
@@ -77,11 +145,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    padding-bottom: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000; */
+    flex-wrap: wrap;
 }
 
 @keyframes gradientAnimation {
@@ -92,12 +159,13 @@ body{
 
 /* Animated Heading */
 .animated-heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    animation: rainbowText 3s infinite linear, waveText 1.5s infinite ease-in-out, glowEffect 1.5s infinite alternate, zoomEffect 2s infinite ease-in-out;
-    color: white;
-    margin-right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: rainbowText 3s infinite linear, waveText 1.5s infinite ease-in-out, glowEffect 1.5s infinite alternate, zoomEffect 2s infinite ease-in-out;
+  color: white;
+  margin: 0 15px;
+  text-align: center;
 }
 
 @keyframes rainbowText {
@@ -129,18 +197,22 @@ body{
 }
 
 /* Animated Button */
+/* Animated Button */
 .animated-btn {
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
-    background: linear-gradient(45deg, #ff5733, #ffbd33);
-    color: white;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
-    display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #ff5733, #ffbd33);
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  text-align: center;
+  margin-top: 5px;
 }
+
 
 .animated-btn:hover {
     background: linear-gradient(45deg, #33ff57, #33aaff);
@@ -148,22 +220,24 @@ body{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Mobile View Fix */
 @media (max-width: 768px) {
-  .animated-navbar {
-      flex-direction: column;
-      text-align: center;
-      border-radius: 20px;
-      padding: 12px;
-  }
+    .animated-navbar {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Adjust height automatically */
+        text-align: center;
+        padding: 15px 10px;
+    }
 
-  .animated-heading {
-      font-size: 18px; /* Smaller for Mobile */
-      margin-bottom: 10px;
-      margin-right: 0;
-  }
+    .animated-heading {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        width: 100%;
+    }
 
-  .animated-btn {
-      font-size: 16px;
-      padding: 8px 16px;
-  }
+    .animated-btn {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        width: auto;
+    }
 }

@@ -16,25 +16,11 @@
     text-transform:uppercase;
   }
 
-  /* .main{
-    background-image:linear-gradient(rgba(0,0,0,0.60),rgba(0, 0, 0, 0.60)),url('static/images/home.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    color: white;
-    font-weight:900;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:center;
-    
-  } */
 
-
-   .sub{
+   /* .sub{
     background: linear-gradient(45deg, #ff5733, #ffbd33, #33ff57, #33aaff);
     animation: gradientAnimation 6s ease infinite;
-   }
+   } */
 </style>
 </head>
 <body>
@@ -49,7 +35,7 @@
 
   
   {% include 'navbar.html' %}
-  <div class="main text-center container-fluid" style=" background-image:linear-gradient(rgba(0,0,0,0.60),rgba(0, 0, 0, 0.60)),url('static/images/home.jpg');
+  <div class="main text-center container-fluid" style=" background-image:linear-gradient(rgba(0,0,0,0.80),rgba(0, 0, 0, 0.80)),url('static/images/home.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -61,7 +47,7 @@
     justify-content:center;">
    
     <div class="container mt-2" >
-      <div class="d-flex justify-content-center align-items-center">
+      <div class="d-flex justify-content-center align-items-center ">
       <img data-aos="zoom-in" data-aos-duration="800" src="static/icmtem_logo.jpg"  height="80px"  ><h4 style="text-shadow: 2px 2px 4px #000000;font-weight:900;text-transform: uppercase;" data-aos="zoom-in"   data-aos-easing="linear"
        data-aos-duration="800">International conference on Modern Trends in Engineering and Management (ICMTEM-25)</h4>
       </div>
@@ -106,22 +92,25 @@
   <br>
     
   </div>
-  <br><br><br>
   
   
-    <div class="sub text-dark  shadow p-3 mb-5  rounded" style="position: absolute;right:0;width: 230px;height:200px ;">
-<center>
-    <h5 style="font-weight:900">After making the payment,kindly fill the below Registration form: <br><br><a class="text-white" href="https://forms.gle/FSHm7ZZS8WDqxgTa7" target="_blank"><button class="blink btn btn-danger">Click here</button></a></h5>
-      <br>
-      
-    </center>
-  </div>
-  <div class="sub bg-light  shadow p-3 mb-5  rounded" style="position: absolute;left:0;width: 230px;height:200px ;">
-    <center>
-    <h5 class="mt-4" style="font-weight:900">Send your paper to this mail ID : <h5>
-    <h5 class="text-primary">icmtem2024@gmail.com</h5> 
-  </center>
-  </div>
+  
+  <div class="floating-container">
+    <!-- Left Floating Box -->
+    <div class="floating-box floating-left">
+        <h5 style="font-weight:900;">Send your paper to this mail ID:</h5>
+        <h5 class="text-light" style="font-weight:900;">icmtem2024@gmail.com</h5>
+    </div>
+
+    <!-- Right Floating Box -->
+    <div class="floating-box floating-right">
+        <h5 style="font-weight:900;">After making the payment, kindly fill the below Registration form:</h5>
+        <a class="text-white" href="https://forms.gle/zrrxmywSiZjDsGff6" target="_blank">
+            <button class="blink btn btn-light">Click here</button>
+        </a>
+    </div>
+</div>
+
   <br>
 <div class="container">
   <div class="container">
