@@ -86,6 +86,10 @@ body{
       margin-bottom: 20px;
       
   }
+  .logo{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -240,4 +244,54 @@ body{
         padding: 10px 18px;
         width: auto;
     }
+}
+
+.floating-notice {
+  position: fixed;
+  top: 38%;
+  left: 0;
+  background: #c750b7; /* Change this for a different color */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 15px rgba(255, 87, 51, 0.7);
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+  animation: waveMovement 6s infinite ease-in-out;
+  z-index: 9999;
+}
+
+/* Icon Style */
+.icon {
+  font-size: 1.5rem;
+}
+
+/* Floating Animation */
+@keyframes waveMovement {
+  0% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-8px) translateX(4px); }
+  50% { transform: translateY(8px) translateX(-4px); }
+  75% { transform: translateY(-5px) translateX(2px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .floating-notice {
+      display:none;
+      font-size: 1rem;
+      /* padding: 10px 20px; */
+      /* gap: 8px; */
+      position: static;
+      width: 100px;
+      /* top: 15%;
+      left: 5px; */
+  }
+
+  .icon {
+      font-size: 1.3rem;
+  }
 }
